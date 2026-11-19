@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Momoko’s Movie Night</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap">
 <style>
 section {
@@ -96,51 +92,88 @@ section {
 .endtitle { margin: 20px 0 0; font-size: 130px; font-weight: 800; line-height: 1.2; animation: popin 0.6s ease-out both; }
 .endsub { margin: 40px 0 0; font-size: 40px; font-weight: 700; color: #2A2140; animation: rise 0.5s 0.3s ease-out both; }
 
-/* ===== site shell ===== */
 * { box-sizing: border-box; }
-html, body { margin: 0; background: #2A2140; font-family: 'M PLUS Rounded 1c', sans-serif; }
+html, body { margin: 0; background: #2A2140; font-family: 'M PLUS Rounded 1c', sans-serif; color: #2A2140; }
 x-shape { display: block; border-radius: 50%; }
 .stage section { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; }
 .stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
 .frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: #FFF7EC; }
-.poster { position: relative; overflow: hidden; }
-.pimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.topbar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 16px; background: #2A2140; color: #FFF7EC; }
-.topbar h1 { margin: 0; font-size: clamp(14px, 4vw, 18px); font-weight: 800; white-space: nowrap; }
-.topbar button { font: inherit; font-weight: 800; font-size: 14px; border: 0; border-radius: 999px; padding: 8px 14px; white-space: nowrap; background: #FFD23F; color: #2A2140; cursor: pointer; }
-.list { max-width: 1100px; margin: 0 auto; padding: 16px 12px 80px; display: flex; flex-direction: column; gap: 22px; }
-.like { margin: 10px auto 0; display: flex; align-items: center; gap: 10px; font: inherit; font-weight: 800; font-size: 18px; color: #2A2140; background: #FFF7EC; border: 3px solid #2A2140; border-radius: 999px; padding: 10px 22px; cursor: pointer; box-shadow: 4px 4px 0 #FF7EA8; transition: transform .1s; }
-.like:active { transform: scale(.94); }
-.like .heart { font-size: 24px; line-height: 1; color: #E8457A; }
-.like.on { background: #FF7EA8; }
-.like.on .heart { color: #2A2140; }
-.like .cnt { min-width: 2ch; text-align: center; background: #2A2140; color: #FFF7EC; border-radius: 999px; padding: 2px 10px; font-family: 'Fredoka', sans-serif; }
-.like.bump .heart { animation: bump .4s ease-out; }
+.poster { position: relative; }
+.pimg { width: 388px; height: 588px; object-fit: cover; border-radius: 22px; display: block; }
+.topbar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; background: #2A2140; color: #FFF7EC; }
+.topbar h1 { margin: 0; font-family: 'Fredoka', sans-serif; font-size: clamp(15px, 4vw, 20px); white-space: nowrap; }
+.topbar .btns { display: flex; gap: 6px; }
+.topbar a, .topbar button { font: inherit; font-weight: 800; font-size: 13px; border: 0; border-radius: 999px; padding: 8px 12px; background: #FFD23F; color: #2A2140; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.list { max-width: 1000px; margin: 0 auto; padding: 14px 12px 80px; display: flex; flex-direction: column; gap: 22px; }
+.panel { background: #FFF7EC; border-radius: 18px; padding: 20px; border: 3px solid #2A2140; }
+.panel h2 { margin: 0 0 6px; font-size: 22px; }
+.panel .sub { margin: 0 0 14px; font-size: 14px; color: #4E4560; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { font: inherit; font-weight: 700; font-size: 15px; border: 3px solid #2A2140; background: #fff; border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+.opt.on { background: #FF7EA8; }
+.bars { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+.bar { display: grid; grid-template-columns: 110px 1fr 36px; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
+.bar .track { height: 16px; background: #EDE6DA; border-radius: 999px; overflow: hidden; }
+.bar .fill { height: 100%; background: #FF7EA8; width: 0; transition: width .4s; }
+.bar .n { text-align: right; }
+form.rec { display: flex; flex-direction: column; gap: 8px; }
+form.rec input, form.rec textarea { font: inherit; font-size: 15px; padding: 10px 12px; border: 2px solid #2A2140; border-radius: 12px; background: #fff; width: 100%; }
+form.rec textarea { min-height: 70px; resize: vertical; }
+.go { font: inherit; font-weight: 800; font-size: 16px; border: 3px solid #2A2140; border-radius: 999px; padding: 10px 18px; background: #FFD23F; cursor: pointer; box-shadow: 4px 4px 0 #2A2140; align-self: flex-start; }
+.recs { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.recitem { background: #fff; border: 2px solid #2A2140; border-radius: 12px; padding: 10px 12px; font-size: 14px; line-height: 1.6; }
+.recitem b { font-size: 16px; }
+.recitem .who { color: #6E6680; font-size: 12px; }
+.card { background: #FFF7EC; border-radius: 14px; margin-top: 8px; padding: 16px 18px; border: 3px solid #2A2140; }
+.rlabel { margin: 0 0 6px; font-weight: 800; font-size: 16px; color: #C2185B; }
+.rtext { margin: 0; font-size: 15px; line-height: 1.8; }
+.votes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.vb { display: flex; align-items: center; gap: 6px; font: inherit; font-weight: 800; font-size: 15px; color: #2A2140; background: #fff; border: 3px solid #2A2140; border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+.vb .cnt { min-width: 2ch; text-align: center; background: #2A2140; color: #FFF7EC; border-radius: 999px; padding: 1px 8px; font-family: 'Fredoka', sans-serif; }
+.vb[data-kind=seen].on { background: #6BC1FF; }
+.vb[data-kind=want].on { background: #FFD23F; }
+.vb[data-kind=like].on { background: #FF7EA8; }
+.vb.bump .ic { animation: bump .4s ease-out; display: inline-block; }
 @keyframes bump { 50% { transform: scale(1.6); } }
-/* present mode */
+table.res { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.res th, table.res td { padding: 8px 6px; border-bottom: 1px solid #DDD3C4; text-align: center; }
+table.res th:first-child, table.res td:first-child { text-align: left; }
+table.res th { cursor: pointer; white-space: nowrap; }
+.wrap { overflow-x: auto; }
+.present-only { display: none; }
+@media (max-width: 640px) { #presentBtn { display: none; } .topbar h1 { font-size: 15px; } }
 body.present { overflow: hidden; background: #111; }
-body.present .topbar { display: none; }
+body.present .topbar, body.present .panel { display: none; }
 body.present .list { max-width: none; padding: 0; height: 100vh; justify-content: center; align-items: center; }
-body.present .item { display: none; width: min(100vw, calc(100vh * 16 / 9)); position: relative; }
+body.present .item { display: none; width: min(100vw, calc(100vh * 16 / 9)); }
 body.present .item.cur { display: block; }
 body.present .frame { border-radius: 0; }
-body.present .like { position: absolute; right: 2%; bottom: 3%; margin: 0; font-size: 20px; }
+body.present .card { display: none; }
 .nav { display: none; }
 body.present .nav { display: flex; position: fixed; left: 0; right: 0; bottom: 0; justify-content: center; gap: 12px; padding: 8px; opacity: 0; transition: opacity .2s; }
 body.present .nav:hover { opacity: 1; }
 .nav button { font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 8px 18px; background: #FFF7EC; cursor: pointer; }
-/* ranking */
-.rank { position: fixed; inset: 0; z-index: 20; display: none; background: rgba(42,33,64,.85); align-items: center; justify-content: center; padding: 16px; }
-.rank.open { display: flex; }
-.rank .box { background: #FFF7EC; border: 4px solid #2A2140; border-radius: 24px; padding: 24px; width: min(560px, 100%); max-height: 90vh; overflow: auto; }
-.rank h2 { margin: 0 0 12px; font-size: 24px; }
-.rank ol { margin: 0; padding-left: 1.6em; font-size: 17px; line-height: 1.9; }
-.rank .x { margin-top: 14px; width: 100%; }
-</style>
-</head>
+</style></head>
 <body>
-<div class="topbar"><h1>Momoko’s Movie Night</h1><div style="display:flex;gap:8px"><button id="rankBtn">ランキング</button><button id="presentBtn">発表モード</button></div></div>
+<div class="topbar"><h1>Momoko’s Movie Night</h1><div class="btns"><a href="#survey">アンケート</a><a href="#results">投票一覧</a><button id="presentBtn">発表モード</button></div></div>
 <div class="list">
+<div class="panel" id="survey">
+<h2>🎬 アンケート①：1年に映画を何本くらい観ますか？</h2>
+<p class="sub">ひとつ選んでください（あとから変更OK）</p>
+<div class="opts" id="freqOpts"><button class="opt" data-c="c0">ほとんど観ない</button><button class="opt" data-c="c1">年1〜5本</button><button class="opt" data-c="c2">年6〜20本</button><button class="opt" data-c="c3">年21〜50本</button><button class="opt" data-c="c4">年51本以上</button></div>
+<div class="bars" id="freqBars"></div>
+</div>
+<div class="panel">
+<h2>🍿 アンケート②：あなたのおすすめ映画・ドラマを1本！</h2>
+<p class="sub">発表中いつでも書き込めます。名前は空欄でもOKです</p>
+<form class="rec" id="recForm">
+<input id="recTitle" maxlength="100" placeholder="作品名（例：千と千尋の神隠し）" required>
+<textarea id="recReason" maxlength="500" placeholder="おすすめの理由"></textarea>
+<input id="recName" maxlength="40" placeholder="お名前（任意）">
+<button class="go" type="submit">送信する</button>
+</form>
+<div class="recs" id="recList"></div>
+</div>
 <div class="item" data-id="cover"><div class="frame"><div class="stage"><section id="cover" class="cover">
 <x-shape kind="ellipse" class="blob b1" style="background:#FF7EA8"></x-shape>
 <x-shape kind="ellipse" class="blob b2" style="background:#6BC1FF"></x-shape>
@@ -150,7 +183,7 @@ body.present .nav:hover { opacity: 1; }
 <h1 class="cover-title">Momoko’s<br><span class="hl">Movie</span> Night</h1>
 <p class="cover-sub">好きな映画とドラマを紹介します！</p>
 <p class="byline">上杉桃子 ｜ e-Education バングラデシュ</p>
-<div class="chips"><p class="chip">映画 21本</p><p class="chip">海外ドラマ 6本</p></div>
+<div class="chips"><p class="chip">映画 19本</p><p class="chip">海外ドラマ 3本</p></div>
 </div>
 <svg class="clap" viewBox="0 0 520 520" aria-label="映画のカチンコとポップコーンのイラスト">
 <circle cx="260" cy="260" r="240" fill="#FFD23F"/>
@@ -171,7 +204,7 @@ body.present .nav:hover { opacity: 1; }
 </section></div></div></div><div class="item" data-id="lineup"><div class="frame"><div class="stage"><section id="lineup" class="lineup">
 <p class="eyebrow">TODAY’S LINEUP</p>
 <h2 class="ltitle">今日のラインナップ</h2>
-<div class="lcards"><div class="lcard c1"><p class="lno">CHAPTER 1</p><h3>しみじみ人生・恋愛系</h3><p class="lcount">4作品</p></div><div class="lcard c2"><p class="lno">CHAPTER 2</p><h3>謎・どんでん返し・ダーク系</h3><p class="lcount">7作品</p></div><div class="lcard c3"><p class="lno">CHAPTER 3</p><h3>世界観ぶっ飛び系</h3><p class="lcount">8作品</p></div><div class="lcard c4"><p class="lno">CHAPTER 4</p><h3>ジブリ</h3><p class="lcount">2作品</p></div><div class="lcard c5"><p class="lno">CHAPTER 5</p><h3>海外ドラマ</h3><p class="lcount">6作品</p></div></div>
+<div class="lcards"><div class="lcard c1"><p class="lno">CHAPTER 1</p><h3>しみじみ人生・恋愛系</h3><p class="lcount">4作品</p></div><div class="lcard c2"><p class="lno">CHAPTER 2</p><h3>謎・どんでん返し・ダーク系</h3><p class="lcount">7作品</p></div><div class="lcard c3"><p class="lno">CHAPTER 3</p><h3>世界観ぶっ飛び系</h3><p class="lcount">6作品</p></div><div class="lcard c4"><p class="lno">CHAPTER 4</p><h3>ジブリ</h3><p class="lcount">2作品</p></div><div class="lcard c5"><p class="lno">CHAPTER 5</p><h3>海外ドラマ</h3><p class="lcount">3作品</p></div></div>
 </section></div></div></div><div class="item" data-id="ch1"><div class="frame"><div class="stage"><section id="ch1" class="divider c1">
 <x-shape kind="ellipse" class="dblob" style="background:#FFF7EC"></x-shape>
 <p class="chapno">CHAPTER 1</p>
@@ -185,11 +218,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2017年</p></div><div class="row"><p class="k">監督</p><p class="v">ルカ・グァダニーノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ティモシー・シャラメ、アーミー・ハマー、マイケル・スタールバーグ</p></div></div>
 <p class="syn">1983年の夏、北イタリアの避暑地。17歳のエリオは、大学教授の父のもとへ助手としてやってきた24歳の大学院生オリヴァーと出会う。反発しながらも惹かれ合っていく、一生忘れられないひと夏の恋。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w01.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w01.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w01" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w02"><div class="frame"><div class="stage"><section id="w02" class="work c1">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">イタリアの映画監督、ルカ・グァダニーノの一番有名な作品！ティモシー・シャラメと今はなきというか不適切発言でハリウッドの隅に追いやられているアーミー・ハマーが出ているめちゃくちゃ美しい切ないBL映画です... 北イタリアで撮影しているのでとにかく街並みが美しく、そこに存在感ピッタリのティモシーとアーミーという美青年の組み合わせ！さらに挿入歌であるSufjan StevensのMystery of LoveとVisions of Gideonが異次元に切ない雰囲気を作り出してくれていて、最後の暖炉の前のシーンは泣かずには観られない... おしゃれで切ない映画です！</p>
+<div class="votes" data-id="w01" data-title="Call Me by Your Name">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w02"><div class="frame"><div class="stage"><section id="w02" class="work c1">
 <div class="head"><p class="tag">CHAPTER 1｜しみじみ人生・恋愛系</p><p class="no">No.02</p></div>
 <h2 class="en">About Time</h2>
 <p class="ja">アバウト・タイム 〜愛おしい時間について〜</p>
@@ -197,11 +234,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2013年</p></div><div class="row"><p class="k">監督</p><p class="v">リチャード・カーティス</p></div><div class="row"><p class="k">キャスト</p><p class="v">ドーナル・グリーソン、レイチェル・マクアダムス、ビル・ナイ</p></div></div>
 <p class="syn">21歳の誕生日、ティムは父から「一族の男はタイムトラベルができる」と打ち明けられる。恋人メアリーとの関係を何度もやり直すうちに、彼は“ありふれた毎日”こそが宝物だと気づいていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w02.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w02.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w02" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w03"><div class="frame"><div class="stage"><section id="w03" class="work c1">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">相当有名なラブコメ！ラブ・アクチュアリーと同じ監督なので、楽しくスッキリ観ることができると思いきや、人生の尊さと家族愛に気付かされる深い作品。<br>主人公のティムは冴えないモテない男子なんだけど、タイムトラベルでいろんな失敗を通じて人生に大切なことと本当の愛を見つけられます。その過程が面白いし、切ないしでいろんな感情を味わえる！ビル・ナイ演じるお父さんがマジで全員大好きになります。かっこいい。<br>もちろんレイチェル・マクアダムスはめちゃ可愛いんですが、ブレイク前のマーゴット・ロビーが出ていてとんでもなく美しいです。おすすめ！</p>
+<div class="votes" data-id="w02" data-title="About Time">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w03"><div class="frame"><div class="stage"><section id="w03" class="work c1">
 <div class="head"><p class="tag">CHAPTER 1｜しみじみ人生・恋愛系</p><p class="no">No.03</p></div>
 <h2 class="en">La La Land</h2>
 <p class="ja">ラ・ラ・ランド</p>
@@ -209,11 +250,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2016年</p></div><div class="row"><p class="k">監督</p><p class="v">デイミアン・チャゼル</p></div><div class="row"><p class="k">キャスト</p><p class="v">ライアン・ゴズリング、エマ・ストーン、ジョン・レジェンド</p></div></div>
 <p class="syn">夢を追う人が集まる街ロサンゼルス。女優志望のミアと、ジャズの店を開くのが夢のピアニスト・セブが出会い恋に落ちる。でも夢に近づくほど、ふたりの道は少しずつすれ違っていく。アカデミー賞6部門受賞。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w03.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w03.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w03" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w04"><div class="frame"><div class="stage"><section id="w04" class="work c1">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">言わずと知れた2016年のアカデミー賞監督賞受賞作品！デイミアン・チャゼルは「セッション」でも有名な監督でなんとハーバード卒、当時32歳（怖すぎる）。めちゃくちゃシネフィルらしい。La la Landはミュージカルベースの映画なので初っ端から人が歌い踊るんですが、その歌がいい！すごくハマる！長回しすごい！ライアン・ゴズリングがジャズミュージシャン役で出ているんですが、すごいハマり役でしかも全部自分で演奏している。映像も色彩効果もめっちゃ美しい上に、最後超絶切ないストーリー展開で泣けます。余韻が美しい！</p>
+<div class="votes" data-id="w03" data-title="La La Land">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w04"><div class="frame"><div class="stage"><section id="w04" class="work c1">
 <div class="head"><p class="tag">CHAPTER 1｜しみじみ人生・恋愛系</p><p class="no">No.04</p></div>
 <h2 class="en">Begin Again</h2>
 <p class="ja">はじまりのうた</p>
@@ -221,11 +266,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2013年</p></div><div class="row"><p class="k">監督</p><p class="v">ジョン・カーニー</p></div><div class="row"><p class="k">キャスト</p><p class="v">キーラ・ナイトレイ、マーク・ラファロ、アダム・レヴィーン</p></div></div>
 <p class="syn">恋人に裏切られたシンガーソングライターのグレタと、落ち目の音楽プロデューサー・ダン。スタジオを借りるお金もないふたりは、ニューヨークの街角そのものを“スタジオ”にして、路上でアルバムを録り始める。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w04.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w04.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w04" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="ch2"><div class="frame"><div class="stage"><section id="ch2" class="divider c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">辛いことや大変なことがあっても、勇気をもらえる作品。パイレーツ・オブ・カリビアンで大好きなキーラ・ナイトレイがシンガーソングライターを演じてます。劇中歌である「Lost Star」という曲がめっちゃいい！切なくて心に残ります。なんとキーラの恋人役をやってるのが、Maroon 5のアダム・レヴィーン！そりゃめっちゃ歌上手いやろ... やめてくれ... キーラ演じるグレタとマーク演じるダンの掛け合いも微笑ましくて楽しく、観た後スッキリする大好きな映画です！</p>
+<div class="votes" data-id="w04" data-title="Begin Again">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="ch2"><div class="frame"><div class="stage"><section id="ch2" class="divider c2">
 <x-shape kind="ellipse" class="dblob" style="background:#FFF7EC"></x-shape>
 <p class="chapno">CHAPTER 2</p>
 <h1 class="chaptitle">謎・どんでん返し・ダーク系</h1>
@@ -238,11 +287,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2010年</p></div><div class="row"><p class="k">監督</p><p class="v">クリストファー・ノーラン</p></div><div class="row"><p class="k">キャスト</p><p class="v">レオナルド・ディカプリオ、ジョセフ・ゴードン＝レヴィット、渡辺謙</p></div></div>
 <p class="syn">他人の夢に潜り込み、アイデアを盗み出すプロのコブ。ある大物から、逆にアイデアを“植え付ける（インセプション）”という不可能な依頼を受け、チームとともに夢の何層も奥深くへと潜っていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w05.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w05.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w05" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w06"><div class="frame"><div class="stage"><section id="w06" class="work c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">ノーラン作品で一番好きなやつ！多分全員好き！笑 夢からアイデアを盗み出す、そして植え付けるというコンセプト、夢の階層、重力が反転する世界の作り込みなど、まさにクリストファー・ノーランという緻密な脚本。ダイナミックで予測できない映像、ハラハラする展開、ディカプリオ、キリアン・マーフィー、渡辺謙も含めて名優揃いで、一度は観るべき作品。<br>音楽はハンズ・ジマーが作っており、壮大な世界観を増幅してくれます。（パイレーツ・オブ・カリビアン、インターステラー、ダークナイトあたりは全部ハンズ・ジマー！恐ろしい）<br>最後のエンディングは背筋が凍る！無駄な時間が1秒もない映画です。</p>
+<div class="votes" data-id="w05" data-title="Inception">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w06"><div class="frame"><div class="stage"><section id="w06" class="work c2">
 <div class="head"><p class="tag">CHAPTER 2｜謎・どんでん返し・ダーク系</p><p class="no">No.06</p></div>
 <h2 class="en">Fight Club</h2>
 <p class="ja">ファイト・クラブ</p>
@@ -250,11 +303,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1999年</p></div><div class="row"><p class="k">監督</p><p class="v">デヴィッド・フィンチャー</p></div><div class="row"><p class="k">キャスト</p><p class="v">エドワード・ノートン、ブラッド・ピット、ヘレナ・ボナム＝カーター</p></div></div>
 <p class="syn">不眠症に悩む平凡な会社員の“僕”は、自由奔放な石鹸の行商人タイラー・ダーデンと出会う。ふたりが始めた素手の殴り合いの集まり「ファイト・クラブ」は、やがて思いもよらない方向へ暴走していく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w06.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w06.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w06" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w10"><div class="frame"><div class="stage"><section id="w10" class="work c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">デヴィッド・フィンチャーの代表作！（ゴーン・ガール、ゾディアック、ベンジャミン・バトンも面白いです）今では有名ですが、この映画は実は興行的には最初失敗しています。ただ、そのストーリーの面白さ、ブラピのかっこよさがだんだん話題となり、カルト的に映画好きの間で人気を博していった映画です。ブラピが若くてめっちゃイケてるのはもちろん、メッセージ性があり、現代資本主義の虚無感をよく描いています。なんかとんでもないことに巻き込まれていっている緊迫感、最後のどんでん返しなど見どころめっちゃ多く、一度観たら忘れられない作品です。</p>
+<div class="votes" data-id="w06" data-title="Fight Club">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w10"><div class="frame"><div class="stage"><section id="w10" class="work c2">
 <div class="head"><p class="tag">CHAPTER 2｜謎・どんでん返し・ダーク系</p><p class="no">No.07</p></div>
 <h2 class="en">Se7en</h2>
 <p class="ja">セブン</p>
@@ -262,11 +319,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1995年</p></div><div class="row"><p class="k">監督</p><p class="v">デヴィッド・フィンチャー</p></div><div class="row"><p class="k">キャスト</p><p class="v">ブラッド・ピット、モーガン・フリーマン、グウィネス・パルトロー</p></div></div>
 <p class="syn">雨が降り続く大都市。退職間近のベテラン刑事サマセットと、血気盛んな新人刑事ミルズは、キリスト教の「七つの大罪」になぞらえた連続猟奇殺人事件を追ううちに、犯人の恐ろしい計画に巻き込まれていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w10.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w10.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w10" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w07"><div class="frame"><div class="stage"><section id="w07" class="work c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">これもデヴィット・フィンチャー✖️ブラッド・ピット！この映画きっかけでブラピとグウィネス・パルトローは交際することになりますね。ストーリーはキリスト教における七つの大罪にまつわる殺人が起こっていき、それを追うベテラン刑事と新人刑事の物語。殺人の現場がよくできていて、もはやグロいので苦手な方はちょっと勧めません。犯人を演じるのはケヴィン・スペイシーなのですが、この犯人がサイコパスで本当に怖い！最後まさか... みたいな終わり方で終わって全然ハッピーエンドじゃないですが、よくできてる映画です！</p>
+<div class="votes" data-id="w10" data-title="Se7en">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w07"><div class="frame"><div class="stage"><section id="w07" class="work c2">
 <div class="head"><p class="tag">CHAPTER 2｜謎・どんでん返し・ダーク系</p><p class="no">No.08</p></div>
 <h2 class="en">Prisoners</h2>
 <p class="ja">プリズナーズ</p>
@@ -274,11 +335,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2013年</p></div><div class="row"><p class="k">監督</p><p class="v">ドゥニ・ヴィルヌーヴ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ヒュー・ジャックマン、ジェイク・ギレンホール、ポール・ダノ</p></div></div>
 <p class="syn">感謝祭の日、ペンシルベニアの田舎町で6歳の娘とその友達が姿を消す。容疑者の青年は証拠不十分で釈放され、父親ケラーは自らの手で真相を暴こうと一線を越えていく。一方、刑事ロキも事件の奥に潜む“迷路”のような謎を追う。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w07.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w07.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w07" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w08"><div class="frame"><div class="stage"><section id="w08" class="work c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">ヒュー・ジャックマンとジェイク・ギレンホールがW主演。監督はドゥニ・ヴィルヌーヴ！次のジェームズ・ボンドの監督やる人、かつDUNEの監督でもあり、シリアスからSFまで幅広く質の高い映画を撮る人なのでおすすめ。ヒュー・ジャックマンの娘が誘拐されて犯人を探すんですが、この容疑者とされる人への対応が人間の闇を思わせて相当怖いです。また、この話自体がキリスト教的な宗教観における神とか原罪的なものをベースにしているので、そういう考察が好きな人にはおすすめです！最後の犯人が思いもよらぬ人だった... ラストシーンも素晴らしい余韻。</p>
+<div class="votes" data-id="w07" data-title="Prisoners">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w08"><div class="frame"><div class="stage"><section id="w08" class="work c2">
 <div class="head"><p class="tag">CHAPTER 2｜謎・どんでん返し・ダーク系</p><p class="no">No.09</p></div>
 <h2 class="en">Parasite</h2>
 <p class="ja">パラサイト 半地下の家族</p>
@@ -286,11 +351,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2019年</p></div><div class="row"><p class="k">監督</p><p class="v">ポン・ジュノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ソン・ガンホ、イ・ソンギュン、チョ・ヨジョン、チェ・ウシク</p></div></div>
 <p class="syn">半地下の家で暮らす、全員失業中のキム一家。長男が高台の豪邸に住むパク家の家庭教師になったのをきっかけに、一家は身分を偽って次々とパク家に入り込んでいく。カンヌ最高賞とアカデミー作品賞をW受賞。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w08.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w08.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w08" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w09"><div class="frame"><div class="stage"><section id="w09" class="work c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">言わずと知れたアカデミー賞作品賞（外国語長編としては初かな？）！韓国における格差社会の現状を描きつつも、コメディとスリラー、ミステリー的要素を踏まえつつ、カタルシス感のあるエンディングがすごい！と思いました。最後のエンディングのどれが本当かわからないというところもいい！ポン・ジュノ映画の常連ソン・ガンホを筆頭にチェ・ウシクがめっちゃいい役でハマりました。最後のエンディングソングも良い。ポン・ジュノはあんまり観てないですが、「Micky 17」というロバート・パティンソン主演の映画はSFヒューマンコメディで面白いのでおすすめです。</p>
+<div class="votes" data-id="w08" data-title="Parasite">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w09"><div class="frame"><div class="stage"><section id="w09" class="work c2">
 <div class="head"><p class="tag">CHAPTER 2｜謎・どんでん返し・ダーク系</p><p class="no">No.10</p></div>
 <h2 class="en">Reservoir Dogs</h2>
 <p class="ja">レザボア・ドッグス</p>
@@ -298,11 +367,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1992年</p></div><div class="row"><p class="k">監督</p><p class="v">クエンティン・タランティーノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ハーヴェイ・カイテル、ティム・ロス、マイケル・マドセン、スティーヴ・ブシェミ</p></div></div>
 <p class="syn">互いの本名も知らない男たちが宝石店強盗を決行するが、計画は大失敗。集合場所の倉庫に逃げ込んだ彼らは「この中に裏切り者がいる」と疑心暗鬼に陥っていく。タランティーノの監督デビュー作。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w09.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w09.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w09" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w27"><div class="frame"><div class="stage"><section id="w27" class="work c2">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">タランティーノで一番好きな映画！30年以上経っているとは思えない... めちゃくちゃ低予算でこの時俳優の衣装も自前で用意してくれと頼んだぐらいで、撮影場所もメインは倉庫。なのにめちゃくちゃ面白い！なんでもない会話劇の始まりすら面白い、BGMも最高という、まさにタランティーノのいいところが詰まっている作品。倉庫という特殊空間での先の読めない腹の読み合い、ずる賢いやつ、めちゃくちゃいいやつ、サイコパス... などいろんな人間の側面を見せてくれます。これが初監督作品って、タランティーノほんとにすごいなと思いました。</p>
+<div class="votes" data-id="w09" data-title="Reservoir Dogs">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w27"><div class="frame"><div class="stage"><section id="w27" class="work c2">
 <div class="head"><p class="tag">CHAPTER 2｜謎・どんでん返し・ダーク系</p><p class="no">No.11</p></div>
 <h2 class="en">Mulholland Drive</h2>
 <p class="ja">マルホランド・ドライブ</p>
@@ -310,15 +383,19 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2001年</p></div><div class="row"><p class="k">監督</p><p class="v">デヴィッド・リンチ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ナオミ・ワッツ、ローラ・ハリング、ジャスティン・セロー</p></div></div>
 <p class="syn">ハリウッドの丘を走るマルホランド・ドライブで事故が起き、記憶を失った黒髪の女性が近くの家に逃げ込む。女優を夢見てやってきたベティは彼女と一緒に記憶の手がかりを探し始めるが、物語は夢と現実が入り混じる迷宮へと迷い込んでいく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w27.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w27.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w27" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="ch3"><div class="frame"><div class="stage"><section id="ch3" class="divider c3">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">謎解きみたいなのが好きな人におすすめです。ローラ・ハリングが美しすぎる映画。このローラ演じるリタが事故にあい記憶喪失になってしまい、偶然ナオミ・ワッツ演じるベティに出会います。二人で記憶を取り戻そうとするのですが、その過程でこれは夢なのか？現実なのか？と思うような出来事が次々起こり、段々と自分が現実と思わされていた方が夢ではないかと気づく... あちらこちらに手掛かりとなるようなヒントはあるのですが、答えを教えてくれないので自分で解釈するしかないです！常に不穏で何が起こるかわからない展開と、印象的な映像がどんどん出てきます。</p>
+<div class="votes" data-id="w27" data-title="Mulholland Drive">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="ch3"><div class="frame"><div class="stage"><section id="ch3" class="divider c3">
 <x-shape kind="ellipse" class="dblob" style="background:#FFF7EC"></x-shape>
 <p class="chapno">CHAPTER 3</p>
 <h1 class="chaptitle">世界観ぶっ飛び系</h1>
-<div class="pills"><p class="pill">Dune</p><p class="pill">Poor Things</p><p class="pill">Fantastic Planet</p><p class="pill">Mad Max: Fury Road</p><p class="pill">Everything Everywhere All at Once</p><p class="pill">TÁR</p><p class="pill">Mickey 17</p><p class="pill">American Psycho</p></div>
+<div class="pills"><p class="pill">Dune</p><p class="pill">Poor Things</p><p class="pill">Fantastic Planet</p><p class="pill">Mad Max: Fury Road</p><p class="pill">Everything Everywhere All at Once</p><p class="pill">TÁR</p></div>
 </section></div></div></div><div class="item" data-id="w11"><div class="frame"><div class="stage"><section id="w11" class="work c3">
 <div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.12</p></div>
 <h2 class="en">Dune</h2>
@@ -327,11 +404,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2021年（PART2：2024年）</p></div><div class="row"><p class="k">監督</p><p class="v">ドゥニ・ヴィルヌーヴ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ティモシー・シャラメ、レベッカ・ファーガソン、オスカー・アイザック、ゼンデイヤ</p></div></div>
 <p class="syn">遠い未来、貴重な資源「スパイス」を産む砂の惑星アラキス。その統治を任されたアトレイデス家は罠にはめられ、滅亡の危機に。後継者ポールは砂漠の民フレメンと出会い、大きな運命に導かれていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w11.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w11.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w11" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w12"><div class="frame"><div class="stage"><section id="w12" class="work c3">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">めちゃくちゃ壮大なSF映画。ちょうど今年12月ごろにDUNE PART 3が公開予定！SFだけど世界観の作り込み、CGがすごいので、SFにありがちな没入感のなさが全然ない！ストーリーが面白いのはもちろん、とにかく音楽と映像の迫力がすごい。音楽はハンズ・ジマーだから間違いないけど、サンドワームという超巨大ミミズみたいなものが出てくるシーンは鳥肌レベルにすごい！映画館で観てほしい映画。ティモシー・シャラメが王家の後継者、ゼンデイヤが砂漠の民フレメンの戦士だけど、衣装や設定もかっこいい。悪役の国の戦闘シーンもアクションというより芸術です。個人的には2の方が好き。</p>
+<div class="votes" data-id="w11" data-title="Dune">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w12"><div class="frame"><div class="stage"><section id="w12" class="work c3">
 <div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.13</p></div>
 <h2 class="en">Poor Things</h2>
 <p class="ja">哀れなるものたち</p>
@@ -339,11 +420,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2023年</p></div><div class="row"><p class="k">監督</p><p class="v">ヨルゴス・ランティモス</p></div><div class="row"><p class="k">キャスト</p><p class="v">エマ・ストーン、マーク・ラファロ、ウィレム・デフォー</p></div></div>
 <p class="syn">天才外科医の手で奇跡的に蘇生した女性ベラ。“大人の体に子どもの脳”を持つ彼女は、世界を自分の目で見るため大陸横断の旅に出て、驚くべきスピードで成長していく。エマ・ストーンがアカデミー主演女優賞。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w12.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w12.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w12" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w13"><div class="frame"><div class="stage"><section id="w13" class="work c3">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">エマ・ストーンがアカデミー賞主演女優賞を取った映画。ヨルゴス・ランティモスは「女王陛下のお気に入り」とかも有名です。ギリシャ出身の映画監督なんですが、特に映像の撮り方、ライティングが独特で絵画の世界を映像にして見ているかのような不思議さがあり、それが魅力。<br>徹底的に衣装とかもこだわりがあるのか、全ての場面が別々の絵本を見ているかのような美しさ、それでいて女性の成長と独立、主体性を奇妙なストーリーラインで目を離せない面白さがあります。まじで最初主人公のこと全然理解できないけど、ラストめっちゃ好きになってる、癖のあるお菓子みたいな映画です。</p>
+<div class="votes" data-id="w12" data-title="Poor Things">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w13"><div class="frame"><div class="stage"><section id="w13" class="work c3">
 <div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.14</p></div>
 <h2 class="en">Fantastic Planet</h2>
 <p class="ja">ファンタスティック・プラネット</p>
@@ -351,11 +436,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1973年（フランス・チェコスロバキア）</p></div><div class="row"><p class="k">監督</p><p class="v">ルネ・ラルー</p></div><div class="row"><p class="k">原作・美術</p><p class="v">原作：ステファン・ウル／美術：ローラン・トポール</p></div></div>
 <p class="syn">青い肌の巨人ドラーグ族が支配する惑星。人間に似た小さなオム族は、ペットとして飼われるか害虫として駆除されていた。ドラーグ族の少女に飼われた少年テールは、彼らの知識をこっそり学び、仲間とともに立ち上がる。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w13.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w13.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w13" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w14"><div class="frame"><div class="stage"><section id="w14" class="work c3">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">めちゃくちゃ癖のあるアニメ映画。全編フランス語です。人間（みたいな動物）が青い巨大な宇宙人にペットとして飼われる世界線。なんか凶暴で気持ち悪い草に人間が食べられたりして非常に不条理です。人間的なものはすごく立場が弱く虫みたいに扱われていますが、青い宇宙人の秘密を学んで反撃？しようとする話です。青い宇宙人の秘密がえっ！と驚く展開で、ストーリー的にも面白いですし、何より人間はほぼこの宇宙人みたいなことを他の動物にしているなと思うとメタ的に学びになります。全体的に絵が気持ち悪いところがすごく個人的なツボです！変な映画みたい人におすすめ。</p>
+<div class="votes" data-id="w13" data-title="Fantastic Planet">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w14"><div class="frame"><div class="stage"><section id="w14" class="work c3">
 <div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.15</p></div>
 <h2 class="en">Mad Max: Fury Road</h2>
 <p class="ja">マッドマックス 怒りのデス・ロード</p>
@@ -363,11 +452,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2015年</p></div><div class="row"><p class="k">監督</p><p class="v">ジョージ・ミラー</p></div><div class="row"><p class="k">キャスト</p><p class="v">トム・ハーディ、シャーリーズ・セロン、ニコラス・ホルト</p></div></div>
 <p class="syn">石油も水も尽きかけた荒廃した世界。独裁者イモータン・ジョーに捕らえられたマックスは、ジョーの“妻たち”を連れて逃げる女戦士フュリオサと出会い、砂漠を舞台にした壮絶な逃走劇が始まる。アカデミー賞6部門受賞。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w14.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w14.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w14" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w15"><div class="frame"><div class="stage"><section id="w15" class="work c3">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">これ嫌いな人はおらんやろという鉄板のアクション映画。トム・ハーディー（インセプションにも出てたね）主演。シャーリーズ・セロン演じるフュリオサが超絶かっこいいです、こんな坊主にして美しいとか何？マッド・マックスシリーズは実は1979年からあるんですね。ディストピア的な世界で緑の大地を求めて逃げる話。ディストピアの再現性がすごく、地球温暖化Maxまで進んだらこんな感じになるのではないかと思わされます。イモータン・ジョーがマジで気持ち悪いし怖すぎる。アドレナリンを出したい時に観た方がいいです。</p>
+<div class="votes" data-id="w14" data-title="Mad Max: Fury Road">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w15"><div class="frame"><div class="stage"><section id="w15" class="work c3">
 <div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.16</p></div>
 <h2 class="en">Everything Everywhere All at Once</h2>
 <p class="ja">エブリシング・エブリウェア・オール・アット・ワンス</p>
@@ -375,11 +468,15 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2022年</p></div><div class="row"><p class="k">監督</p><p class="v">ダニエル・クワン＆ダニエル・シャイナート</p></div><div class="row"><p class="k">キャスト</p><p class="v">ミシェル・ヨー、キー・ホイ・クァン、ステファニー・スー</p></div></div>
 <p class="syn">コインランドリーを営む中国系移民のエヴリンは、税金の申告に追われる冴えない毎日。そこへ“別の宇宙の夫”が現れ、無数のマルチバースをまたいで世界を救う戦いに巻き込まれる。アカデミー賞7部門受賞。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w15.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w15.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w15" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w16"><div class="frame"><div class="stage"><section id="w16" class="work c3">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">これもアカデミー賞受賞作品。アジア系の俳優さんが結構受賞してハリウッド内でも一目置かれることになった作品です。アメリカの中でのアジア系移民の立場を、カオスなSF設定と家族愛を通して描いていてめちゃくちゃ面白い、観たことない系の映画ですごい新しいです。最近の若者における冷笑文化を愛を通して否定し、ハッピーエンドに繋げる素晴らしいストーリーライン。アクションシーンも迫力あって面白いし、誰でも楽しく見れるはず！</p>
+<div class="votes" data-id="w15" data-title="Everything Everywhere All at Once">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w16"><div class="frame"><div class="stage"><section id="w16" class="work c3">
 <div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.17</p></div>
 <h2 class="en">TÁR</h2>
 <p class="ja">TAR／ター</p>
@@ -387,205 +484,202 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2022年</p></div><div class="row"><p class="k">監督</p><p class="v">トッド・フィールド</p></div><div class="row"><p class="k">キャスト</p><p class="v">ケイト・ブランシェット、ニーナ・ホス、ノエミ・メルラン</p></div></div>
 <p class="syn">ベルリン・フィルで女性として初めて首席指揮者となったリディア・ター。名声も権力も手にした彼女だったが、ある疑惑をきっかけに、完璧に見えた世界が少しずつ崩れ始めていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w16.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w16.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w16" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w17"><div class="frame"><div class="stage"><section id="w17" class="work c3">
-<div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.18</p></div>
-<h2 class="en">Mickey 17</h2>
-<p class="ja">ミッキー17</p>
-<div class="body">
-<div class="info">
-<div class="meta"><div class="row"><p class="k">公開</p><p class="v">2025年</p></div><div class="row"><p class="k">監督</p><p class="v">ポン・ジュノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ロバート・パティンソン、ナオミ・アッキー、スティーヴン・ユァン、マーク・ラファロ</p></div></div>
-<p class="syn">氷の惑星の開拓ミッションで、死ぬたびに記憶ごと“プリント”し直される使い捨て労働者のミッキー。ところが17号が死んだと思われて18号が作られてしまい、ふたりのミッキーが同時に存在することに。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
-</div>
-<div class="poster"><img class="pimg" src="images/w17.jpg" alt="" onerror="this.remove()"></div>
-</div>
-</section></div></div><button class="like" data-id="w17" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w18"><div class="frame"><div class="stage"><section id="w18" class="work c3">
-<div class="head"><p class="tag">CHAPTER 3｜世界観ぶっ飛び系</p><p class="no">No.19</p></div>
-<h2 class="en">American Psycho</h2>
-<p class="ja">アメリカン・サイコ</p>
-<div class="body">
-<div class="info">
-<div class="meta"><div class="row"><p class="k">公開</p><p class="v">2000年</p></div><div class="row"><p class="k">監督</p><p class="v">メアリー・ハロン</p></div><div class="row"><p class="k">キャスト</p><p class="v">クリスチャン・ベール、ウィレム・デフォー、ジャレッド・レト</p></div></div>
-<p class="syn">1980年代のニューヨーク。ウォール街のエリート、パトリック・ベイトマンは、高級スーツや名刺のデザインにまでこだわる完璧な男。しかしその裏には、誰にも言えない“もうひとつの顔”があった。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
-</div>
-<div class="poster"><img class="pimg" src="images/w18.jpg" alt="" onerror="this.remove()"></div>
-</div>
-</section></div></div><button class="like" data-id="w18" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="ch4"><div class="frame"><div class="stage"><section id="ch4" class="divider c4">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">ケイト・ブランシェットの魅力が詰まった作品。ケイトってオーシャンズ8の時も思ったんだけど、絶対女性にモテる女性だよな。このTARでのケイトは天才的な指揮者という役、これ演技かと思うとマジですごい。めちゃくちゃかっこいいですし、本当にいそう。一方で成功の裏では、その力を使って「この人ちょっとやばいんじゃないか」ということをやり、性格の悪さやエゴが垣間見えて怖い... と同時に自分もこうなりかねないのでは？と思わせてくるリアルさがある。キャンセルカルチャーが当たり前になった世界で転落していくTARを観るのが面白くも恐怖で、最高に面白い映画です。</p>
+<div class="votes" data-id="w16" data-title="TÁR">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="ch4"><div class="frame"><div class="stage"><section id="ch4" class="divider c4">
 <x-shape kind="ellipse" class="dblob" style="background:#FFF7EC"></x-shape>
 <p class="chapno">CHAPTER 4</p>
 <h1 class="chaptitle">ジブリ</h1>
 <div class="pills"><p class="pill">Pom Poko</p><p class="pill">Princess Mononoke</p></div>
 </section></div></div></div><div class="item" data-id="w20"><div class="frame"><div class="stage"><section id="w20" class="work c4">
-<div class="head"><p class="tag">CHAPTER 4｜ジブリ</p><p class="no">No.20</p></div>
+<div class="head"><p class="tag">CHAPTER 4｜ジブリ</p><p class="no">No.18</p></div>
 <h2 class="en">Pom Poko</h2>
 <p class="ja">平成狸合戦ぽんぽこ</p>
 <div class="body">
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1994年</p></div><div class="row"><p class="k">監督</p><p class="v">高畑勲</p></div><div class="row"><p class="k">声の出演</p><p class="v">野々村真、石田ゆり子、三木のり平、清川虹子</p></div></div>
 <p class="syn">多摩丘陵のニュータウン開発で、住みかを奪われそうになった狸たち。古くから伝わる「化け学」を復活させ、あの手この手の作戦で人間に立ち向かう。笑えて、最後にちょっと切ない狸たちの物語。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w20.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w20.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w20" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w19"><div class="frame"><div class="stage"><section id="w19" class="work c4">
-<div class="head"><p class="tag">CHAPTER 4｜ジブリ</p><p class="no">No.21</p></div>
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">多分ジブリで2番目に好きな作品です。みんな観たことある！？面白いよ！？私子供の頃から妖怪とかが好きなんですが、たぬきって人とかものに化けたりして人を騙したりするよね。そういうところから生まれている物語です。今でもたぬきっているけど、開発で住むとこが少なくなって人間と戦わないといけなくなるという物語。とにかく出てくるたぬきが可愛い、応援したい。一方で自然と共生しにくくなっている人間自身の愚かさとか自分勝手さにも気付かされる名作です。高畑勲作品！</p>
+<div class="votes" data-id="w20" data-title="Pom Poko">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w19"><div class="frame"><div class="stage"><section id="w19" class="work c4">
+<div class="head"><p class="tag">CHAPTER 4｜ジブリ</p><p class="no">No.19</p></div>
 <h2 class="en">Princess Mononoke</h2>
 <p class="ja">もののけ姫</p>
 <div class="body">
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1997年</p></div><div class="row"><p class="k">監督</p><p class="v">宮崎駿</p></div><div class="row"><p class="k">声の出演</p><p class="v">松田洋治、石田ゆり子、田中裕子、美輪明宏</p></div></div>
 <p class="syn">タタリ神の呪いを受けた青年アシタカは、呪いを解く手がかりを求めて西へ旅立つ。そこで出会ったのは、森を切り開くタタラ場の人々と、山犬に育てられた少女サン。人間と森の神々の戦いに巻き込まれていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w19.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w19.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w19" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="ch5"><div class="frame"><div class="stage"><section id="ch5" class="divider c5">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">ジブリの最高峰と個人的には思ってます。全ての登場人物がいい。なんか本当に日本人の精神性の起源というか、八百万の神がいる世界ってこうなんだろうなと思わされる。私は強くて怖いシシガミ様が推しです。エボシもサンとかから見たらむかつくけど、ハンセン病の人たちに分け隔てなく接したりしてて泣ける。人間と自然が本当に共生していける道を探したいねという思いで定期的に見たくなる映画です。あと時々インスタとかでも声優さんの声録ってる場面とか出てくるけど、超かっこいい。モロの美輪明宏さん、オッコト主の森繁久彌さんは最高ですね。</p>
+<div class="votes" data-id="w19" data-title="Princess Mononoke">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="ch5"><div class="frame"><div class="stage"><section id="ch5" class="divider c5">
 <x-shape kind="ellipse" class="dblob" style="background:#FFF7EC"></x-shape>
 <p class="chapno">CHAPTER 5</p>
 <h1 class="chaptitle">海外ドラマ</h1>
-<div class="pills"><p class="pill">Euphoria</p><p class="pill">Breaking Bad</p><p class="pill">Better Call Saul</p><p class="pill">Suits</p><p class="pill">Mr. Robot</p><p class="pill">GIRLS</p></div>
+<div class="pills"><p class="pill">Euphoria</p><p class="pill">Breaking Bad</p><p class="pill">Better Call Saul</p></div>
 </section></div></div></div><div class="item" data-id="w21"><div class="frame"><div class="stage"><section id="w21" class="work c5">
-<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.22</p></div>
+<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.20</p></div>
 <h2 class="en">Euphoria</h2>
 <p class="ja">ユーフォリア</p>
 <div class="body">
 <div class="info">
 <div class="meta"><div class="row"><p class="k">放送</p><p class="v">2019年〜（HBO）※桃子的にはシーズン2まで</p></div><div class="row"><p class="k">制作</p><p class="v">サム・レヴィンソン</p></div><div class="row"><p class="k">キャスト</p><p class="v">ゼンデイヤ、ハンター・シェイファー、ジェイコブ・エロルディ</p></div></div>
 <p class="syn">薬物依存のリハビリ施設から戻った17歳のルー。転校生ジュールズとの出会いをきっかけに、SNS・恋愛・ドラッグ・アイデンティティに揺れる高校生たちの痛みと危うさを描く。ゼンデイヤがエミー賞を2度受賞。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w21.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w21.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w21" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w22"><div class="frame"><div class="stage"><section id="w22" class="work c5">
-<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.23</p></div>
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">海外ドラマで一番好きなドラマ。アメリカではめちゃくちゃバズって、このドラマ出身でスターになった俳優がすごいたくさんいます。ゼンデイヤ演じるルーが薬物依存症の高校生なんだけど、それだけでアメリカっぽい。いわゆるハッピーな高校ドラマではなく、リアルな解像度の高い人間ドラマが観られて最高。世界観も素晴らしい、映像やファッション、メイク、キャラクターのおしゃれさが尋常じゃないです。劇中で流れてるLabrinthの歌も最高すぎていうことない。女子に見てほしいです笑</p>
+<div class="votes" data-id="w21" data-title="Euphoria">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w22"><div class="frame"><div class="stage"><section id="w22" class="work c5">
+<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.21</p></div>
 <h2 class="en">Breaking Bad</h2>
 <p class="ja">ブレイキング・バッド</p>
 <div class="body">
 <div class="info">
 <div class="meta"><div class="row"><p class="k">放送</p><p class="v">2008〜2013年（AMC・全5シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">ヴィンス・ギリガン</p></div><div class="row"><p class="k">キャスト</p><p class="v">ブライアン・クランストン、アーロン・ポール、ボブ・オデンカーク</p></div></div>
 <p class="syn">余命宣告を受けた冴えない高校の化学教師ウォルター・ホワイト。家族にお金を遺すため、元教え子のジェシーと組んでドラッグ製造に手を染め、やがて裏社会の大物へと変貌していく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w22.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w22.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w22" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w23"><div class="frame"><div class="stage"><section id="w23" class="work c5">
-<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.24</p></div>
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">21世紀最高のドラマでは？長いけどめちゃくちゃ面白いです。冴えない高校の化学教師ウォルターが天才的な薬物の製造者になる話。</p>
+<div class="votes" data-id="w22" data-title="Breaking Bad">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="w23"><div class="frame"><div class="stage"><section id="w23" class="work c5">
+<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.22</p></div>
 <h2 class="en">Better Call Saul</h2>
 <p class="ja">ベター・コール・ソウル</p>
 <div class="body">
 <div class="info">
 <div class="meta"><div class="row"><p class="k">放送</p><p class="v">2015〜2022年（AMC・全6シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">ヴィンス・ギリガン、ピーター・グールド</p></div><div class="row"><p class="k">キャスト</p><p class="v">ボブ・オデンカーク、レイ・シーホーン、ジョナサン・バンクス</p></div></div>
 <p class="syn">『ブレイキング・バッド』に登場する悪徳弁護士ソウル・グッドマン。彼がまだ売れない弁護士ジミー・マッギルだった頃から、なぜ“ソウル”になってしまったのかを描くスピンオフ。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
 </div>
-<div class="poster"><img class="pimg" src="images/w23.jpg" alt="" onerror="this.remove()"></div>
+<div class="poster" style="overflow:hidden"><img class="pimg" src="images/w23.jpg" alt=""></div>
 </div>
-</section></div></div><button class="like" data-id="w23" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w24"><div class="frame"><div class="stage"><section id="w24" class="work c5">
-<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.25</p></div>
-<h2 class="en">Suits</h2>
-<p class="ja">SUITS／スーツ</p>
-<div class="body">
-<div class="info">
-<div class="meta"><div class="row"><p class="k">放送</p><p class="v">2011〜2019年（USAネットワーク・全9シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">アーロン・コーシュ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ガブリエル・マクト、パトリック・J・アダムス、メーガン・マークル</p></div></div>
-<p class="syn">驚異的な記憶力を持つ大学中退の青年マイクは、ニューヨークの敏腕弁護士ハーヴィーに見込まれ、弁護士資格がないことを隠したまま一流法律事務所で働くことに。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
-</div>
-<div class="poster"><img class="pimg" src="images/w24.jpg" alt="" onerror="this.remove()"></div>
-</div>
-</section></div></div><button class="like" data-id="w24" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w25"><div class="frame"><div class="stage"><section id="w25" class="work c5">
-<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.26</p></div>
-<h2 class="en">Mr. Robot</h2>
-<p class="ja">MR. ROBOT／ミスター・ロボット</p>
-<div class="body">
-<div class="info">
-<div class="meta"><div class="row"><p class="k">放送</p><p class="v">2015〜2019年（USAネットワーク・全4シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">サム・エスメイル</p></div><div class="row"><p class="k">キャスト</p><p class="v">ラミ・マレック、クリスチャン・スレーター、カーリー・チェイキン</p></div></div>
-<p class="syn">昼はセキュリティ企業のエンジニア、夜は凄腕ハッカーのエリオット。謎の男“ミスター・ロボット”率いるハッカー集団fsocietyに誘われ、世界を牛耳る巨大企業Eコープを倒す計画に加わっていく。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
-</div>
-<div class="poster"><img class="pimg" src="images/w25.jpg" alt="" onerror="this.remove()"></div>
-</div>
-</section></div></div><button class="like" data-id="w25" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="w26"><div class="frame"><div class="stage"><section id="w26" class="work c5">
-<div class="head"><p class="tag">CHAPTER 5｜海外ドラマ</p><p class="no">No.27</p></div>
-<h2 class="en">GIRLS</h2>
-<p class="ja">GIRLS／ガールズ</p>
-<div class="body">
-<div class="info">
-<div class="meta"><div class="row"><p class="k">放送</p><p class="v">2012〜2017年（HBO・全6シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">レナ・ダナム</p></div><div class="row"><p class="k">キャスト</p><p class="v">レナ・ダナム、アリソン・ウィリアムズ、ジェマイマ・カーク、アダム・ドライバー</p></div></div>
-<p class="syn">ニューヨーク・ブルックリンで暮らす20代の女性4人。作家志望のハンナを中心に、仕事・恋愛・友情・お金にもがく等身大の毎日を、痛いほどリアルに描く。</p>
-<div class="reason"><h3>好きな理由</h3><p class="ph">［ここに好きな理由を書く］</p></div>
-</div>
-<div class="poster"><img class="pimg" src="images/w26.jpg" alt="" onerror="this.remove()"></div>
-</div>
-</section></div></div><button class="like" data-id="w26" aria-pressed="false"><span class="heart">♡</span><span class="lbl">共感！</span><span class="cnt">0</span></button></div><div class="item" data-id="end"><div class="frame"><div class="stage"><section id="end" class="end">
+</section></div></div><div class="card"><p class="rlabel">♡ 桃子の好きな理由</p><p class="rtext">これも時間なくて書けない！けど、Braking Badのアナザーストーリー。長いけどマジで面白いです。</p>
+<div class="votes" data-id="w23" data-title="Better Call Saul">
+<button class="vb" data-kind="seen"><span class="ic">👀</span><span class="lbl">観たことある</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="want"><span class="ic">✨</span><span class="lbl">観たい！</span><span class="cnt">0</span></button>
+<button class="vb" data-kind="like"><span class="ic">♥</span><span class="lbl">共感！</span><span class="cnt">0</span></button>
+</div></div></div><div class="item" data-id="end"><div class="frame"><div class="stage"><section id="end" class="end">
 <x-shape kind="ellipse" class="eblob e1" style="background:#FF7EA8"></x-shape>
 <x-shape kind="ellipse" class="eblob e2" style="background:#6BC1FF"></x-shape>
 <p class="eyebrow">YOUR TURN!</p>
 <h1 class="endtitle">あなたの<br>「人生の1本」は？</h1>
 <p class="endsub">映画でもドラマでもOK。ひとりずつ教えてください！</p>
 </section></div></div></div>
+<div class="panel" id="results">
+<h2>📊 みんなの投票一覧</h2>
+<p class="sub">見出しをタップすると並べ替えできます。数字は数秒ごとに更新されます</p>
+<div class="wrap"><table class="res"><thead><tr><th data-k="title">作品</th><th data-k="seen">👀 観たことある</th><th data-k="want">✨ 観たい！</th><th data-k="like">♥ 共感！</th></tr></thead><tbody id="resBody"></tbody></table></div>
+</div>
 </div>
 <div class="nav"><button id="prev">← 前へ</button><button id="exit">一覧に戻る</button><button id="next">次へ →</button></div>
-<div class="rank" id="rank"><div class="box"><h2>共感ランキング</h2><ol id="rankList"></ol><button class="x like" id="rankClose" style="justify-content:center">閉じる</button></div></div>
 <script>
 const URL_ = "https://xhxxdzxhgiymaofhoiag.supabase.co", KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhoeHhkenhoZ2l5bWFvZmhvaWFnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMwMDUyNzYsImV4cCI6MjEwODU4MTI3Nn0.iGfKRZOHQM8fv40--Yz-4yEtbhLik5XiM-XfOWvudfY";
 const H = { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' };
-const titles = {};
-document.querySelectorAll('.item').forEach(it => { const en = it.querySelector('.en'); if (en) titles[it.dataset.id] = en.textContent; });
-// scale stages
+const FREQ = [["c0", "ほとんど観ない"], ["c1", "年1〜5本"], ["c2", "年6〜20本"], ["c3", "年21〜50本"], ["c4", "年51本以上"]];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const ls = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
 function fit() { document.querySelectorAll('.frame').forEach(f => { f.firstElementChild.style.transform = 'scale(' + (f.clientWidth / 1920) + ')'; }); }
 addEventListener('resize', fit); new ResizeObserver(fit).observe(document.body); fit();
-// likes
-const mine = (() => { try { return JSON.parse(localStorage.getItem('likes') || '{}'); } catch (e) { return {}; } })();
-const save = () => { try { localStorage.setItem('likes', JSON.stringify(mine)); } catch (e) {} };
+const rpc = (fn, body) => fetch(URL_ + '/rest/v1/rpc/' + fn, { method: 'POST', headers: H, body: JSON.stringify(body) });
+const get = path => fetch(URL_ + '/rest/v1/' + path, { headers: H }).then(r => r.ok ? r.json() : null).catch(() => null);
+// votes
+const mine = ls.get('votes2', {});
 let counts = {};
-function render() {
-  document.querySelectorAll('.like[data-id]').forEach(b => {
-    const id = b.dataset.id; b.querySelector('.cnt').textContent = counts[id] || 0;
-    const on = !!mine[id]; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on);
-    b.querySelector('.heart').textContent = on ? '♥' : '♡';
-  });
+const key = (id, k) => id + ':' + k;
+function renderVotes() {
+  document.querySelectorAll('.votes').forEach(v => v.querySelectorAll('.vb').forEach(b => {
+    const k = key(v.dataset.id, b.dataset.kind);
+    b.querySelector('.cnt').textContent = counts[k] || 0;
+    b.classList.toggle('on', !!mine[k]);
+  }));
+  renderTable();
 }
-async function load() {
-  try { const r = await fetch(URL_ + '/rest/v1/likes?select=work_id,count', { headers: H });
-    if (r.ok) { counts = {}; (await r.json()).forEach(x => counts[x.work_id] = x.count); render(); } } catch (e) {}
+let sortK = 'none', sortDir = -1;
+function renderTable() {
+  const rows = [...document.querySelectorAll('.votes')].map(v => ({ title: v.dataset.title, seen: counts[key(v.dataset.id,'seen')]||0, want: counts[key(v.dataset.id,'want')]||0, like: counts[key(v.dataset.id,'like')]||0 }));
+  if (sortK === 'title') rows.sort((a,b) => a.title.localeCompare(b.title) * -sortDir);
+  else if (sortK !== 'none') rows.sort((a,b) => (b[sortK]-a[sortK]) * (sortDir === -1 ? 1 : -1));
+  document.getElementById('resBody').innerHTML = rows.map(r => '<tr><td>' + esc(r.title) + '</td><td>' + r.seen + '</td><td>' + r.want + '</td><td>' + r.like + '</td></tr>').join('');
 }
-async function toggle(b) {
-  const id = b.dataset.id, on = !mine[id];
-  mine[id] = on; if (!on) delete mine[id]; save();
-  counts[id] = Math.max(0, (counts[id] || 0) + (on ? 1 : -1)); render();
+document.querySelectorAll('table.res th').forEach(th => th.onclick = () => { const k = th.dataset.k; if (sortK === k) sortDir *= -1; else { sortK = k; sortDir = -1; } renderTable(); });
+document.querySelectorAll('.votes').forEach(v => v.querySelectorAll('.vb').forEach(b => b.onclick = async e => {
+  e.stopPropagation();
+  const k = key(v.dataset.id, b.dataset.kind), on = !mine[k];
+  if (on) mine[k] = 1; else delete mine[k]; ls.set('votes2', mine);
+  counts[k] = Math.max(0, (counts[k]||0) + (on?1:-1)); renderVotes();
   b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump');
-  try { const r = await fetch(URL_ + '/rest/v1/rpc/' + (on ? 'like_work' : 'unlike_work'), { method: 'POST', headers: H, body: JSON.stringify({ p_work_id: id }) });
-    if (r.ok) { counts[id] = await r.json(); render(); } } catch (e) {}
+  try { const r = await rpc('vote_work', { p_work_id: v.dataset.id, p_kind: b.dataset.kind, p_on: on }); if (r.ok) { counts[k] = await r.json(); renderVotes(); } } catch (e) {}
+}));
+// survey 1
+let myFreq = ls.get('freq', null), freqCounts = {};
+function renderFreq() {
+  document.querySelectorAll('#freqOpts .opt').forEach(b => b.classList.toggle('on', b.dataset.c === myFreq));
+  const total = Object.values(freqCounts).reduce((a,b)=>a+b,0) || 1;
+  document.getElementById('freqBars').innerHTML = FREQ.map(([k,l]) => '<div class="bar"><span>' + l + '</span><div class="track"><div class="fill" style="width:' + (100*(freqCounts[k]||0)/total) + '%"></div></div><span class="n">' + (freqCounts[k]||0) + '</span></div>').join('');
 }
-document.querySelectorAll('.like[data-id]').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); toggle(b); }));
-load(); setInterval(load, 4000);
-// ranking
-const rank = document.getElementById('rank');
-document.getElementById('rankBtn').onclick = () => {
-  const rows = Object.keys(titles).map(id => [titles[id], counts[id] || 0]).sort((a, b) => b[1] - a[1]);
-  document.getElementById('rankList').innerHTML = rows.map(r => '<li>' + r[0].replace(/</g, '&lt;') + ' — <b>' + r[1] + '</b></li>').join('');
-  rank.classList.add('open');
+document.querySelectorAll('#freqOpts .opt').forEach(b => b.onclick = async () => {
+  const c = b.dataset.c, prev = myFreq; if (c === prev) return;
+  if (prev) freqCounts[prev] = Math.max(0,(freqCounts[prev]||0)-1); freqCounts[c] = (freqCounts[c]||0)+1;
+  myFreq = c; ls.set('freq', c); renderFreq();
+  try { await rpc('answer_freq', { p_choice: c, p_prev: prev }); } catch (e) {}
+});
+// survey 2
+function renderRecs(list) {
+  document.getElementById('recList').innerHTML = (list||[]).map(r => '<div class="recitem"><b>' + esc(r.title) + '</b>' + (r.reason ? '<br>' + esc(r.reason) : '') + '<br><span class="who">' + (r.name ? esc(r.name) : '名無しさん') + '</span></div>').join('');
+}
+document.getElementById('recForm').onsubmit = async e => {
+  e.preventDefault();
+  const title = document.getElementById('recTitle').value.trim(); if (!title) return;
+  const body = { title, reason: document.getElementById('recReason').value.trim() || null, name: document.getElementById('recName').value.trim() || null };
+  const btn = e.target.querySelector('button'); btn.disabled = true; btn.textContent = '送信中…';
+  try { const r = await fetch(URL_ + '/rest/v1/recommendations', { method: 'POST', headers: { ...H, Prefer: 'return=minimal' }, body: JSON.stringify(body) });
+    if (r.ok) { document.getElementById('recTitle').value = ''; document.getElementById('recReason').value = ''; btn.textContent = '送信しました！'; load(); } else btn.textContent = '送信できませんでした';
+  } catch (e) { btn.textContent = '送信できませんでした'; }
+  setTimeout(() => { btn.disabled = false; btn.textContent = '送信する'; }, 1800);
 };
-document.getElementById('rankClose').onclick = () => rank.classList.remove('open');
+async function load() {
+  const [v, f, r] = await Promise.all([get('votes?select=work_id,kind,count'), get('survey_freq?select=choice,count'), get('recommendations?select=name,title,reason,created_at&order=created_at.desc&limit=200')]);
+  if (v) { counts = {}; v.forEach(x => counts[key(x.work_id, x.kind)] = x.count); renderVotes(); }
+  if (f) { freqCounts = {}; f.forEach(x => freqCounts[x.choice] = x.count); renderFreq(); }
+  if (r) renderRecs(r);
+}
+renderVotes(); renderFreq(); load(); setInterval(load, 4000);
 // present mode
 const items = [...document.querySelectorAll('.item')]; let cur = 0;
-function show(i) { cur = Math.max(0, Math.min(items.length - 1, i)); items.forEach((it, k) => it.classList.toggle('cur', k === cur)); fit();
-  items[cur].querySelectorAll('section *').forEach(el => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }); }
+function show(i) { cur = Math.max(0, Math.min(items.length - 1, i)); items.forEach((it, k) => it.classList.toggle('cur', k === cur)); fit(); }
 document.getElementById('presentBtn').onclick = () => { document.body.classList.add('present'); show(cur); document.documentElement.requestFullscreen?.().catch(() => {}); };
 const exitP = () => { document.body.classList.remove('present'); if (document.fullscreenElement) document.exitFullscreen(); fit(); items[cur].scrollIntoView(); };
 document.getElementById('exit').onclick = exitP;
 document.getElementById('prev').onclick = () => show(cur - 1);
 document.getElementById('next').onclick = () => show(cur + 1);
 addEventListener('keydown', e => { if (!document.body.classList.contains('present')) return;
-  if (['ArrowRight', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); show(cur + 1); }
-  if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1); }
+  if (['ArrowRight',' ','PageDown'].includes(e.key)) { e.preventDefault(); show(cur + 1); }
+  if (['ArrowLeft','PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1); }
   if (e.key === 'Escape') exitP(); });
 document.querySelector('.list').addEventListener('click', e => { if (document.body.classList.contains('present') && !e.target.closest('button')) show(cur + 1); });
 </script>
-</body>
-</html>
+</body></html>
