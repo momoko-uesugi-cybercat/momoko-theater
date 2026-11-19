@@ -137,10 +137,13 @@ form.rec textarea { min-height: 70px; resize: vertical; }
 @keyframes bump { 50% { transform: scale(1.6); } }
 table.res { width: 100%; border-collapse: collapse; font-size: 14px; }
 table.res th, table.res td { padding: 8px 6px; border-bottom: 1px solid #DDD3C4; text-align: center; }
-table.res th:first-child, table.res td:first-child { text-align: left; }
+table.res th:nth-child(2), table.res td:nth-child(2) { text-align: left; }
 table.res th { cursor: pointer; white-space: nowrap; }
 .wrap { overflow-x: auto; }
 .present-only { display: none; }
+.stage .reason { display: none; }
+body.present .stage .reason { display: block; }
+.stage .reason .ph { color: #2A2140; }
 @media (max-width: 640px) { #presentBtn { display: none; } .topbar h1 { font-size: 15px; } }
 body.present { overflow: hidden; background: #111; }
 body.present .topbar, body.present .panel { display: none; }
@@ -218,6 +221,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2017年</p></div><div class="row"><p class="k">監督</p><p class="v">ルカ・グァダニーノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ティモシー・シャラメ、アーミー・ハマー、マイケル・スタールバーグ</p></div></div>
 <p class="syn">1983年の夏、北イタリアの避暑地。17歳のエリオは、大学教授の父のもとへ助手としてやってきた24歳の大学院生オリヴァーと出会う。反発しながらも惹かれ合っていく、一生忘れられないひと夏の恋。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">イタリアの映画監督、ルカ・グァダニーノの一番有名な作品！ティモシー・シャラメと今はなきというか不適切発言でハリウッドの隅に追いやられているアーミー・ハマーが出ているめちゃくちゃ美しい切ないBL映画です... 北イタリアで撮影しているのでとにかく街並みが美しく、そこに存在感ピッタリのティモシーとアーミーという美青年の組み合わせ！さらに挿入歌であるSufjan StevensのMystery of LoveとVisions of Gideonが異次元に切ない雰囲気を作り出してくれていて、最後の暖炉の前のシーンは泣かずには観られない... おしゃれで切ない映画です！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w01.jpg" alt=""></div>
 </div>
@@ -234,6 +238,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2013年</p></div><div class="row"><p class="k">監督</p><p class="v">リチャード・カーティス</p></div><div class="row"><p class="k">キャスト</p><p class="v">ドーナル・グリーソン、レイチェル・マクアダムス、ビル・ナイ</p></div></div>
 <p class="syn">21歳の誕生日、ティムは父から「一族の男はタイムトラベルができる」と打ち明けられる。恋人メアリーとの関係を何度もやり直すうちに、彼は“ありふれた毎日”こそが宝物だと気づいていく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">相当有名なラブコメ！ラブ・アクチュアリーと同じ監督なので、楽しくスッキリ観ることができると思いきや、人生の尊さと家族愛に気付かされる深い作品。<br>主人公のティムは冴えないモテない男子なんだけど、タイムトラベルでいろんな失敗を通じて人生に大切なことと本当の愛を見つけられます。その過程が面白いし、切ないしでいろんな感情を味わえる！ビル・ナイ演じるお父さんがマジで全員大好きになります。かっこいい。<br>もちろんレイチェル・マクアダムスはめちゃ可愛いんですが、ブレイク前のマーゴット・ロビーが出ていてとんでもなく美しいです。おすすめ！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w02.jpg" alt=""></div>
 </div>
@@ -250,6 +255,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2016年</p></div><div class="row"><p class="k">監督</p><p class="v">デイミアン・チャゼル</p></div><div class="row"><p class="k">キャスト</p><p class="v">ライアン・ゴズリング、エマ・ストーン、ジョン・レジェンド</p></div></div>
 <p class="syn">夢を追う人が集まる街ロサンゼルス。女優志望のミアと、ジャズの店を開くのが夢のピアニスト・セブが出会い恋に落ちる。でも夢に近づくほど、ふたりの道は少しずつすれ違っていく。アカデミー賞6部門受賞。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">言わずと知れた2016年のアカデミー賞監督賞受賞作品！デイミアン・チャゼルは「セッション」でも有名な監督でなんとハーバード卒、当時32歳（怖すぎる）。めちゃくちゃシネフィルらしい。La la Landはミュージカルベースの映画なので初っ端から人が歌い踊るんですが、その歌がいい！すごくハマる！長回しすごい！ライアン・ゴズリングがジャズミュージシャン役で出ているんですが、すごいハマり役でしかも全部自分で演奏している。映像も色彩効果もめっちゃ美しい上に、最後超絶切ないストーリー展開で泣けます。余韻が美しい！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w03.jpg" alt=""></div>
 </div>
@@ -266,6 +272,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2013年</p></div><div class="row"><p class="k">監督</p><p class="v">ジョン・カーニー</p></div><div class="row"><p class="k">キャスト</p><p class="v">キーラ・ナイトレイ、マーク・ラファロ、アダム・レヴィーン</p></div></div>
 <p class="syn">恋人に裏切られたシンガーソングライターのグレタと、落ち目の音楽プロデューサー・ダン。スタジオを借りるお金もないふたりは、ニューヨークの街角そのものを“スタジオ”にして、路上でアルバムを録り始める。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">辛いことや大変なことがあっても、勇気をもらえる作品。パイレーツ・オブ・カリビアンで大好きなキーラ・ナイトレイがシンガーソングライターを演じてます。劇中歌である「Lost Star」という曲がめっちゃいい！切なくて心に残ります。なんとキーラの恋人役をやってるのが、Maroon 5のアダム・レヴィーン！そりゃめっちゃ歌上手いやろ... やめてくれ... キーラ演じるグレタとマーク演じるダンの掛け合いも微笑ましくて楽しく、観た後スッキリする大好きな映画です！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w04.jpg" alt=""></div>
 </div>
@@ -287,6 +294,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2010年</p></div><div class="row"><p class="k">監督</p><p class="v">クリストファー・ノーラン</p></div><div class="row"><p class="k">キャスト</p><p class="v">レオナルド・ディカプリオ、ジョセフ・ゴードン＝レヴィット、渡辺謙</p></div></div>
 <p class="syn">他人の夢に潜り込み、アイデアを盗み出すプロのコブ。ある大物から、逆にアイデアを“植え付ける（インセプション）”という不可能な依頼を受け、チームとともに夢の何層も奥深くへと潜っていく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">ノーラン作品で一番好きなやつ！多分全員好き！笑 夢からアイデアを盗み出す、そして植え付けるというコンセプト、夢の階層、重力が反転する世界の作り込みなど、まさにクリストファー・ノーランという緻密な脚本。ダイナミックで予測できない映像、ハラハラする展開、ディカプリオ、キリアン・マーフィー、渡辺謙も含めて名優揃いで、一度は観るべき作品。<br>音楽はハンズ・ジマーが作っており、壮大な世界観を増幅してくれます。（パイレーツ・オブ・カリビアン、インターステラー、ダークナイトあたりは全部ハンズ・ジマー！恐ろしい）<br>最後のエンディングは背筋が凍る！無駄な時間が1秒もない映画です。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w05.jpg" alt=""></div>
 </div>
@@ -303,6 +311,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1999年</p></div><div class="row"><p class="k">監督</p><p class="v">デヴィッド・フィンチャー</p></div><div class="row"><p class="k">キャスト</p><p class="v">エドワード・ノートン、ブラッド・ピット、ヘレナ・ボナム＝カーター</p></div></div>
 <p class="syn">不眠症に悩む平凡な会社員の“僕”は、自由奔放な石鹸の行商人タイラー・ダーデンと出会う。ふたりが始めた素手の殴り合いの集まり「ファイト・クラブ」は、やがて思いもよらない方向へ暴走していく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">デヴィッド・フィンチャーの代表作！（ゴーン・ガール、ゾディアック、ベンジャミン・バトンも面白いです）今では有名ですが、この映画は実は興行的には最初失敗しています。ただ、そのストーリーの面白さ、ブラピのかっこよさがだんだん話題となり、カルト的に映画好きの間で人気を博していった映画です。ブラピが若くてめっちゃイケてるのはもちろん、メッセージ性があり、現代資本主義の虚無感をよく描いています。なんかとんでもないことに巻き込まれていっている緊迫感、最後のどんでん返しなど見どころめっちゃ多く、一度観たら忘れられない作品です。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w06.jpg" alt=""></div>
 </div>
@@ -319,6 +328,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1995年</p></div><div class="row"><p class="k">監督</p><p class="v">デヴィッド・フィンチャー</p></div><div class="row"><p class="k">キャスト</p><p class="v">ブラッド・ピット、モーガン・フリーマン、グウィネス・パルトロー</p></div></div>
 <p class="syn">雨が降り続く大都市。退職間近のベテラン刑事サマセットと、血気盛んな新人刑事ミルズは、キリスト教の「七つの大罪」になぞらえた連続猟奇殺人事件を追ううちに、犯人の恐ろしい計画に巻き込まれていく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">これもデヴィット・フィンチャー✖️ブラッド・ピット！この映画きっかけでブラピとグウィネス・パルトローは交際することになりますね。ストーリーはキリスト教における七つの大罪にまつわる殺人が起こっていき、それを追うベテラン刑事と新人刑事の物語。殺人の現場がよくできていて、もはやグロいので苦手な方はちょっと勧めません。犯人を演じるのはケヴィン・スペイシーなのですが、この犯人がサイコパスで本当に怖い！最後まさか... みたいな終わり方で終わって全然ハッピーエンドじゃないですが、よくできてる映画です！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w10.jpg" alt=""></div>
 </div>
@@ -335,6 +345,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2013年</p></div><div class="row"><p class="k">監督</p><p class="v">ドゥニ・ヴィルヌーヴ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ヒュー・ジャックマン、ジェイク・ギレンホール、ポール・ダノ</p></div></div>
 <p class="syn">感謝祭の日、ペンシルベニアの田舎町で6歳の娘とその友達が姿を消す。容疑者の青年は証拠不十分で釈放され、父親ケラーは自らの手で真相を暴こうと一線を越えていく。一方、刑事ロキも事件の奥に潜む“迷路”のような謎を追う。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">ヒュー・ジャックマンとジェイク・ギレンホールがW主演。監督はドゥニ・ヴィルヌーヴ！次のジェームズ・ボンドの監督やる人、かつDUNEの監督でもあり、シリアスからSFまで幅広く質の高い映画を撮る人なのでおすすめ。ヒュー・ジャックマンの娘が誘拐されて犯人を探すんですが、この容疑者とされる人への対応が人間の闇を思わせて相当怖いです。また、この話自体がキリスト教的な宗教観における神とか原罪的なものをベースにしているので、そういう考察が好きな人にはおすすめです！最後の犯人が思いもよらぬ人だった... ラストシーンも素晴らしい余韻。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w07.jpg" alt=""></div>
 </div>
@@ -351,6 +362,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2019年</p></div><div class="row"><p class="k">監督</p><p class="v">ポン・ジュノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ソン・ガンホ、イ・ソンギュン、チョ・ヨジョン、チェ・ウシク</p></div></div>
 <p class="syn">半地下の家で暮らす、全員失業中のキム一家。長男が高台の豪邸に住むパク家の家庭教師になったのをきっかけに、一家は身分を偽って次々とパク家に入り込んでいく。カンヌ最高賞とアカデミー作品賞をW受賞。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">言わずと知れたアカデミー賞作品賞（外国語長編としては初かな？）！韓国における格差社会の現状を描きつつも、コメディとスリラー、ミステリー的要素を踏まえつつ、カタルシス感のあるエンディングがすごい！と思いました。最後のエンディングのどれが本当かわからないというところもいい！ポン・ジュノ映画の常連ソン・ガンホを筆頭にチェ・ウシクがめっちゃいい役でハマりました。最後のエンディングソングも良い。ポン・ジュノはあんまり観てないですが、「Micky 17」というロバート・パティンソン主演の映画はSFヒューマンコメディで面白いのでおすすめです。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w08.jpg" alt=""></div>
 </div>
@@ -367,6 +379,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1992年</p></div><div class="row"><p class="k">監督</p><p class="v">クエンティン・タランティーノ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ハーヴェイ・カイテル、ティム・ロス、マイケル・マドセン、スティーヴ・ブシェミ</p></div></div>
 <p class="syn">互いの本名も知らない男たちが宝石店強盗を決行するが、計画は大失敗。集合場所の倉庫に逃げ込んだ彼らは「この中に裏切り者がいる」と疑心暗鬼に陥っていく。タランティーノの監督デビュー作。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">タランティーノで一番好きな映画！30年以上経っているとは思えない... めちゃくちゃ低予算でこの時俳優の衣装も自前で用意してくれと頼んだぐらいで、撮影場所もメインは倉庫。なのにめちゃくちゃ面白い！なんでもない会話劇の始まりすら面白い、BGMも最高という、まさにタランティーノのいいところが詰まっている作品。倉庫という特殊空間での先の読めない腹の読み合い、ずる賢いやつ、めちゃくちゃいいやつ、サイコパス... などいろんな人間の側面を見せてくれます。これが初監督作品って、タランティーノほんとにすごいなと思いました。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w09.jpg" alt=""></div>
 </div>
@@ -383,6 +396,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2001年</p></div><div class="row"><p class="k">監督</p><p class="v">デヴィッド・リンチ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ナオミ・ワッツ、ローラ・ハリング、ジャスティン・セロー</p></div></div>
 <p class="syn">ハリウッドの丘を走るマルホランド・ドライブで事故が起き、記憶を失った黒髪の女性が近くの家に逃げ込む。女優を夢見てやってきたベティは彼女と一緒に記憶の手がかりを探し始めるが、物語は夢と現実が入り混じる迷宮へと迷い込んでいく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">謎解きみたいなのが好きな人におすすめです。ローラ・ハリングが美しすぎる映画。このローラ演じるリタが事故にあい記憶喪失になってしまい、偶然ナオミ・ワッツ演じるベティに出会います。二人で記憶を取り戻そうとするのですが、その過程でこれは夢なのか？現実なのか？と思うような出来事が次々起こり、段々と自分が現実と思わされていた方が夢ではないかと気づく... あちらこちらに手掛かりとなるようなヒントはあるのですが、答えを教えてくれないので自分で解釈するしかないです！常に不穏で何が起こるかわからない展開と、印象的な映像がどんどん出てきます。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w27.jpg" alt=""></div>
 </div>
@@ -404,6 +418,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2021年（PART2：2024年）</p></div><div class="row"><p class="k">監督</p><p class="v">ドゥニ・ヴィルヌーヴ</p></div><div class="row"><p class="k">キャスト</p><p class="v">ティモシー・シャラメ、レベッカ・ファーガソン、オスカー・アイザック、ゼンデイヤ</p></div></div>
 <p class="syn">遠い未来、貴重な資源「スパイス」を産む砂の惑星アラキス。その統治を任されたアトレイデス家は罠にはめられ、滅亡の危機に。後継者ポールは砂漠の民フレメンと出会い、大きな運命に導かれていく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">めちゃくちゃ壮大なSF映画。ちょうど今年12月ごろにDUNE PART 3が公開予定！SFだけど世界観の作り込み、CGがすごいので、SFにありがちな没入感のなさが全然ない！ストーリーが面白いのはもちろん、とにかく音楽と映像の迫力がすごい。音楽はハンズ・ジマーだから間違いないけど、サンドワームという超巨大ミミズみたいなものが出てくるシーンは鳥肌レベルにすごい！映画館で観てほしい映画。ティモシー・シャラメが王家の後継者、ゼンデイヤが砂漠の民フレメンの戦士だけど、衣装や設定もかっこいい。悪役の国の戦闘シーンもアクションというより芸術です。個人的には2の方が好き。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w11.jpg" alt=""></div>
 </div>
@@ -420,6 +435,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2023年</p></div><div class="row"><p class="k">監督</p><p class="v">ヨルゴス・ランティモス</p></div><div class="row"><p class="k">キャスト</p><p class="v">エマ・ストーン、マーク・ラファロ、ウィレム・デフォー</p></div></div>
 <p class="syn">天才外科医の手で奇跡的に蘇生した女性ベラ。“大人の体に子どもの脳”を持つ彼女は、世界を自分の目で見るため大陸横断の旅に出て、驚くべきスピードで成長していく。エマ・ストーンがアカデミー主演女優賞。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">エマ・ストーンがアカデミー賞主演女優賞を取った映画。ヨルゴス・ランティモスは「女王陛下のお気に入り」とかも有名です。ギリシャ出身の映画監督なんですが、特に映像の撮り方、ライティングが独特で絵画の世界を映像にして見ているかのような不思議さがあり、それが魅力。<br>徹底的に衣装とかもこだわりがあるのか、全ての場面が別々の絵本を見ているかのような美しさ、それでいて女性の成長と独立、主体性を奇妙なストーリーラインで目を離せない面白さがあります。まじで最初主人公のこと全然理解できないけど、ラストめっちゃ好きになってる、癖のあるお菓子みたいな映画です。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w12.jpg" alt=""></div>
 </div>
@@ -436,6 +452,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1973年（フランス・チェコスロバキア）</p></div><div class="row"><p class="k">監督</p><p class="v">ルネ・ラルー</p></div><div class="row"><p class="k">原作・美術</p><p class="v">原作：ステファン・ウル／美術：ローラン・トポール</p></div></div>
 <p class="syn">青い肌の巨人ドラーグ族が支配する惑星。人間に似た小さなオム族は、ペットとして飼われるか害虫として駆除されていた。ドラーグ族の少女に飼われた少年テールは、彼らの知識をこっそり学び、仲間とともに立ち上がる。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">めちゃくちゃ癖のあるアニメ映画。全編フランス語です。人間（みたいな動物）が青い巨大な宇宙人にペットとして飼われる世界線。なんか凶暴で気持ち悪い草に人間が食べられたりして非常に不条理です。人間的なものはすごく立場が弱く虫みたいに扱われていますが、青い宇宙人の秘密を学んで反撃？しようとする話です。青い宇宙人の秘密がえっ！と驚く展開で、ストーリー的にも面白いですし、何より人間はほぼこの宇宙人みたいなことを他の動物にしているなと思うとメタ的に学びになります。全体的に絵が気持ち悪いところがすごく個人的なツボです！変な映画みたい人におすすめ。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w13.jpg" alt=""></div>
 </div>
@@ -452,6 +469,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2015年</p></div><div class="row"><p class="k">監督</p><p class="v">ジョージ・ミラー</p></div><div class="row"><p class="k">キャスト</p><p class="v">トム・ハーディ、シャーリーズ・セロン、ニコラス・ホルト</p></div></div>
 <p class="syn">石油も水も尽きかけた荒廃した世界。独裁者イモータン・ジョーに捕らえられたマックスは、ジョーの“妻たち”を連れて逃げる女戦士フュリオサと出会い、砂漠を舞台にした壮絶な逃走劇が始まる。アカデミー賞6部門受賞。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">これ嫌いな人はおらんやろという鉄板のアクション映画。トム・ハーディー（インセプションにも出てたね）主演。シャーリーズ・セロン演じるフュリオサが超絶かっこいいです、こんな坊主にして美しいとか何？マッド・マックスシリーズは実は1979年からあるんですね。ディストピア的な世界で緑の大地を求めて逃げる話。ディストピアの再現性がすごく、地球温暖化Maxまで進んだらこんな感じになるのではないかと思わされます。イモータン・ジョーがマジで気持ち悪いし怖すぎる。アドレナリンを出したい時に観た方がいいです。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w14.jpg" alt=""></div>
 </div>
@@ -468,6 +486,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2022年</p></div><div class="row"><p class="k">監督</p><p class="v">ダニエル・クワン＆ダニエル・シャイナート</p></div><div class="row"><p class="k">キャスト</p><p class="v">ミシェル・ヨー、キー・ホイ・クァン、ステファニー・スー</p></div></div>
 <p class="syn">コインランドリーを営む中国系移民のエヴリンは、税金の申告に追われる冴えない毎日。そこへ“別の宇宙の夫”が現れ、無数のマルチバースをまたいで世界を救う戦いに巻き込まれる。アカデミー賞7部門受賞。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">これもアカデミー賞受賞作品。アジア系の俳優さんが結構受賞してハリウッド内でも一目置かれることになった作品です。アメリカの中でのアジア系移民の立場を、カオスなSF設定と家族愛を通して描いていてめちゃくちゃ面白い、観たことない系の映画ですごい新しいです。最近の若者における冷笑文化を愛を通して否定し、ハッピーエンドに繋げる素晴らしいストーリーライン。アクションシーンも迫力あって面白いし、誰でも楽しく見れるはず！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w15.jpg" alt=""></div>
 </div>
@@ -484,6 +503,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">2022年</p></div><div class="row"><p class="k">監督</p><p class="v">トッド・フィールド</p></div><div class="row"><p class="k">キャスト</p><p class="v">ケイト・ブランシェット、ニーナ・ホス、ノエミ・メルラン</p></div></div>
 <p class="syn">ベルリン・フィルで女性として初めて首席指揮者となったリディア・ター。名声も権力も手にした彼女だったが、ある疑惑をきっかけに、完璧に見えた世界が少しずつ崩れ始めていく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">ケイト・ブランシェットの魅力が詰まった作品。ケイトってオーシャンズ8の時も思ったんだけど、絶対女性にモテる女性だよな。このTARでのケイトは天才的な指揮者という役、これ演技かと思うとマジですごい。めちゃくちゃかっこいいですし、本当にいそう。一方で成功の裏では、その力を使って「この人ちょっとやばいんじゃないか」ということをやり、性格の悪さやエゴが垣間見えて怖い... と同時に自分もこうなりかねないのでは？と思わせてくるリアルさがある。キャンセルカルチャーが当たり前になった世界で転落していくTARを観るのが面白くも恐怖で、最高に面白い映画です。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w16.jpg" alt=""></div>
 </div>
@@ -505,6 +525,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1994年</p></div><div class="row"><p class="k">監督</p><p class="v">高畑勲</p></div><div class="row"><p class="k">声の出演</p><p class="v">野々村真、石田ゆり子、三木のり平、清川虹子</p></div></div>
 <p class="syn">多摩丘陵のニュータウン開発で、住みかを奪われそうになった狸たち。古くから伝わる「化け学」を復活させ、あの手この手の作戦で人間に立ち向かう。笑えて、最後にちょっと切ない狸たちの物語。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">多分ジブリで2番目に好きな作品です。みんな観たことある！？面白いよ！？私子供の頃から妖怪とかが好きなんですが、たぬきって人とかものに化けたりして人を騙したりするよね。そういうところから生まれている物語です。今でもたぬきっているけど、開発で住むとこが少なくなって人間と戦わないといけなくなるという物語。とにかく出てくるたぬきが可愛い、応援したい。一方で自然と共生しにくくなっている人間自身の愚かさとか自分勝手さにも気付かされる名作です。高畑勲作品！</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w20.jpg" alt=""></div>
 </div>
@@ -521,6 +542,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">公開</p><p class="v">1997年</p></div><div class="row"><p class="k">監督</p><p class="v">宮崎駿</p></div><div class="row"><p class="k">声の出演</p><p class="v">松田洋治、石田ゆり子、田中裕子、美輪明宏</p></div></div>
 <p class="syn">タタリ神の呪いを受けた青年アシタカは、呪いを解く手がかりを求めて西へ旅立つ。そこで出会ったのは、森を切り開くタタラ場の人々と、山犬に育てられた少女サン。人間と森の神々の戦いに巻き込まれていく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">ジブリの最高峰と個人的には思ってます。全ての登場人物がいい。なんか本当に日本人の精神性の起源というか、八百万の神がいる世界ってこうなんだろうなと思わされる。私は強くて怖いシシガミ様が推しです。エボシもサンとかから見たらむかつくけど、ハンセン病の人たちに分け隔てなく接したりしてて泣ける。人間と自然が本当に共生していける道を探したいねという思いで定期的に見たくなる映画です。あと時々インスタとかでも声優さんの声録ってる場面とか出てくるけど、超かっこいい。モロの美輪明宏さん、オッコト主の森繁久彌さんは最高ですね。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w19.jpg" alt=""></div>
 </div>
@@ -542,6 +564,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">放送</p><p class="v">2019年〜（HBO）※桃子的にはシーズン2まで</p></div><div class="row"><p class="k">制作</p><p class="v">サム・レヴィンソン</p></div><div class="row"><p class="k">キャスト</p><p class="v">ゼンデイヤ、ハンター・シェイファー、ジェイコブ・エロルディ</p></div></div>
 <p class="syn">薬物依存のリハビリ施設から戻った17歳のルー。転校生ジュールズとの出会いをきっかけに、SNS・恋愛・ドラッグ・アイデンティティに揺れる高校生たちの痛みと危うさを描く。ゼンデイヤがエミー賞を2度受賞。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">海外ドラマで一番好きなドラマ。アメリカではめちゃくちゃバズって、このドラマ出身でスターになった俳優がすごいたくさんいます。ゼンデイヤ演じるルーが薬物依存症の高校生なんだけど、それだけでアメリカっぽい。いわゆるハッピーな高校ドラマではなく、リアルな解像度の高い人間ドラマが観られて最高。世界観も素晴らしい、映像やファッション、メイク、キャラクターのおしゃれさが尋常じゃないです。劇中で流れてるLabrinthの歌も最高すぎていうことない。女子に見てほしいです笑</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w21.jpg" alt=""></div>
 </div>
@@ -558,6 +581,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">放送</p><p class="v">2008〜2013年（AMC・全5シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">ヴィンス・ギリガン</p></div><div class="row"><p class="k">キャスト</p><p class="v">ブライアン・クランストン、アーロン・ポール、ボブ・オデンカーク</p></div></div>
 <p class="syn">余命宣告を受けた冴えない高校の化学教師ウォルター・ホワイト。家族にお金を遺すため、元教え子のジェシーと組んでドラッグ製造に手を染め、やがて裏社会の大物へと変貌していく。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">21世紀最高のドラマでは？長いけどめちゃくちゃ面白いです。冴えない高校の化学教師ウォルターが天才的な薬物の製造者になる話。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w22.jpg" alt=""></div>
 </div>
@@ -574,6 +598,7 @@ body.present .nav:hover { opacity: 1; }
 <div class="info">
 <div class="meta"><div class="row"><p class="k">放送</p><p class="v">2015〜2022年（AMC・全6シーズン）</p></div><div class="row"><p class="k">制作</p><p class="v">ヴィンス・ギリガン、ピーター・グールド</p></div><div class="row"><p class="k">キャスト</p><p class="v">ボブ・オデンカーク、レイ・シーホーン、ジョナサン・バンクス</p></div></div>
 <p class="syn">『ブレイキング・バッド』に登場する悪徳弁護士ソウル・グッドマン。彼がまだ売れない弁護士ジミー・マッギルだった頃から、なぜ“ソウル”になってしまったのかを描くスピンオフ。</p>
+<div class="reason"><h3>好きな理由</h3><p class="ph">これも時間なくて書けない！けど、Braking Badのアナザーストーリー。長いけどマジで面白いです。</p></div>
 </div>
 <div class="poster" style="overflow:hidden"><img class="pimg" src="images/w23.jpg" alt=""></div>
 </div>
@@ -590,9 +615,9 @@ body.present .nav:hover { opacity: 1; }
 <p class="endsub">映画でもドラマでもOK。ひとりずつ教えてください！</p>
 </section></div></div></div>
 <div class="panel" id="results">
-<h2>📊 みんなの投票一覧</h2>
-<p class="sub">見出しをタップすると並べ替えできます。数字は数秒ごとに更新されます</p>
-<div class="wrap"><table class="res"><thead><tr><th data-k="title">作品</th><th data-k="seen">👀 観たことある</th><th data-k="want">✨ 観たい！</th><th data-k="like">♥ 共感！</th></tr></thead><tbody id="resBody"></tbody></table></div>
+<h2>📊 みんなの投票ランキング</h2>
+<p class="sub">「観たことある」「観たい！」「共感！」の合計が多い順です。見出しをタップすると並べ替えもできます</p>
+<div class="wrap"><table class="res"><thead><tr><th data-k="rank">順位</th><th data-k="title">作品</th><th data-k="total">合計</th><th data-k="seen">👀 観たことある</th><th data-k="want">✨ 観たい！</th><th data-k="like">♥ 共感！</th></tr></thead><tbody id="resBody"></tbody></table></div>
 </div>
 </div>
 <div class="nav"><button id="prev">← 前へ</button><button id="exit">一覧に戻る</button><button id="next">次へ →</button></div>
@@ -618,12 +643,16 @@ function renderVotes() {
   }));
   renderTable();
 }
-let sortK = 'none', sortDir = -1;
+let sortK = 'total', sortDir = -1;
 function renderTable() {
-  const rows = [...document.querySelectorAll('.votes')].map(v => ({ title: v.dataset.title, seen: counts[key(v.dataset.id,'seen')]||0, want: counts[key(v.dataset.id,'want')]||0, like: counts[key(v.dataset.id,'like')]||0 }));
-  if (sortK === 'title') rows.sort((a,b) => a.title.localeCompare(b.title) * -sortDir);
-  else if (sortK !== 'none') rows.sort((a,b) => (b[sortK]-a[sortK]) * (sortDir === -1 ? 1 : -1));
-  document.getElementById('resBody').innerHTML = rows.map(r => '<tr><td>' + esc(r.title) + '</td><td>' + r.seen + '</td><td>' + r.want + '</td><td>' + r.like + '</td></tr>').join('');
+  const rows = [...document.querySelectorAll('.votes')].map(v => { const seen = counts[key(v.dataset.id,'seen')]||0, want = counts[key(v.dataset.id,'want')]||0, like = counts[key(v.dataset.id,'like')]||0; return { title: v.dataset.title, seen, want, like, total: seen + want + like }; });
+  rows.sort((a,b) => b.total - a.total);
+  let prev = null, rank = 0; rows.forEach((r, i) => { if (r.total !== prev) { rank = i + 1; prev = r.total; } r.rank = rank; });
+  if (sortK === 'title') rows.sort((a,b) => a.title.localeCompare(b.title) * (sortDir === -1 ? 1 : -1));
+  else if (sortK === 'rank') rows.sort((a,b) => (a.rank - b.rank) * (sortDir === -1 ? 1 : -1));
+  else rows.sort((a,b) => ((b[sortK]-a[sortK]) || (b.total - a.total)) * (sortDir === -1 ? 1 : -1));
+  const medal = r => r.total === 0 ? '-' : (r.rank === 1 ? '🥇' : r.rank === 2 ? '🥈' : r.rank === 3 ? '🥉' : r.rank);
+  document.getElementById('resBody').innerHTML = rows.map(r => '<tr><td>' + medal(r) + '</td><td>' + esc(r.title) + '</td><td><b>' + r.total + '</b></td><td>' + r.seen + '</td><td>' + r.want + '</td><td>' + r.like + '</td></tr>').join('');
 }
 document.querySelectorAll('table.res th').forEach(th => th.onclick = () => { const k = th.dataset.k; if (sortK === k) sortDir *= -1; else { sortK = k; sortDir = -1; } renderTable(); });
 document.querySelectorAll('.votes').forEach(v => v.querySelectorAll('.vb').forEach(b => b.onclick = async e => {
@@ -670,7 +699,15 @@ async function load() {
 renderVotes(); renderFreq(); load(); setInterval(load, 4000);
 // present mode
 const items = [...document.querySelectorAll('.item')]; let cur = 0;
-function show(i) { cur = Math.max(0, Math.min(items.length - 1, i)); items.forEach((it, k) => it.classList.toggle('cur', k === cur)); fit(); }
+function shrink(it) {
+  const sec = it.querySelector('section.work'); if (!sec) return;
+  const info = sec.querySelector('.info'), ph = sec.querySelector('.reason .ph'), syn = sec.querySelector('.syn'); if (!info || !ph) return;
+  let f = 26; ph.style.fontSize = f + 'px'; syn.style.fontSize = '26px';
+  const limit = 1080 - 80;
+  const bottom = () => info.getBoundingClientRect().bottom / (sec.getBoundingClientRect().height / 1080) - sec.getBoundingClientRect().top / (sec.getBoundingClientRect().height / 1080);
+  while (bottom() > limit && f > 15) { f -= 1; ph.style.fontSize = f + 'px'; if (f < 22) syn.style.fontSize = Math.max(f, 20) + 'px'; }
+}
+function show(i) { cur = Math.max(0, Math.min(items.length - 1, i)); items.forEach((it, k) => it.classList.toggle('cur', k === cur)); fit(); shrink(items[cur]); }
 document.getElementById('presentBtn').onclick = () => { document.body.classList.add('present'); show(cur); document.documentElement.requestFullscreen?.().catch(() => {}); };
 const exitP = () => { document.body.classList.remove('present'); if (document.fullscreenElement) document.exitFullscreen(); fit(); items[cur].scrollIntoView(); };
 document.getElementById('exit').onclick = exitP;
